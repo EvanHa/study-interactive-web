@@ -6,34 +6,136 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Interactive Web</title>
     <style>
-        .world {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60vw;
-            height: 60vh;
-            background: #fff000;
-            perspective: 500px; /* 원근감(3D 공간)을 주기위해 사용하는 옵션 */
-		}
-		.card {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100px;
-			height: 150px;
-			border-radius: 0.5em;
-			font-size: 1.5rem;
-			background: red;
-			transform: rotateY(45deg);
-			/* transform: perspective(500px) rotateY(45deg); */
-		}
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 50vh;
+        background: gray;
+      } */
+      /* .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background: gray;
+      } */
+      .container {
+        display: flex;
+        height: 50vh;
+        background: gray;
+      }
+      
+      .item {
+        /* flex-grow: 1; 여백의 비율을 동일하게 함 */
+        /* flex-basis: 0; */
+        flex: 1;
+        font-size: 3rem;
+        border: 3px solid black;
+        background: white;
+      }
+      /* .item:nth-child(1) { flex-grow:  1; }
+      .item:nth-child(2) { flex-grow:  2; }
+      .item:nth-child(3) { flex-grow:  3; }
+      .item:nth-child(4) { flex-grow:  4; }
+      .item:nth-child(5) { flex-grow:  5; } */
     </style>
 </head>
 <body>
-    <div class="world">
-		<div class="card">A</div>
-		<div class="card">B</div>
-		<div class="card">C</div>
+    <div class="container">
+      <div class="item">AAA</div>
+      <div class="item">B</div>
+      <div class="item">CCCCC</div>
+      <div class="item">DDD</div>
+      <div class="item">E</div>
     </div>
 </body>
 </html>
