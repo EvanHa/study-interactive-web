@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      .stage {
+        overflow: hidden;
+        position: relative;
+        /* vw: viewport width */
+        /* vh: viewport height */
+        width: 100vw;
+        height: 75vw;
+        background: #fff000;
+      }
+      @keyframes moving {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(90vw);
+        }
+      }
+      .ilbuni {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        animation: moving 3s infinite alternate;
+      }
+      .ilbuni.a {
+        left: 5%;
+        bottom: 5%;
+        background-image: url('images/ilbuni_0.png');
+        animation-duration: 2s;
+      }
+      .ilbuni.b {
+        left: 10%;
+        bottom: 3%;
+        background-image: url('images/ilbuni_1.png');
+        animation-duration: 3s;
+      }
+      .ilbuni.c {
+        left: 7%;
+        bottom: 10%;
+        background-image: url('images/ilbuni_2.png');
+        animation-duration: 4s;
+      }
+      .btn-label {
+        text-shadow: rgba(255,255,255,1) 0 1px 0;
+        /* css로 event 동작을 받지 않도록 컨드롤 하는 방법 */
+        /* pointer-events: none; */
+      }
+      .icon {
+        width: 60px;
+        /* pointer-events:none; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <button class="menu-btn" data-value="1">
+        <img src="./images/ilbuni_1.png" alt="ilbuni1 image" class="icon">
+        <span class="btn-label">일분이1</span>
+      </button>
+      <button class="menu-btn" data-value="2">
+        <img src="./images/ilbuni_2.png" alt="ilbuni2 image" class="icon">
+        <span class="btn-label">일분이2</span>
+      </button>
+      <button class="menu-btn" data-value="3">
+        <img src="./images/ilbuni_3.png" alt="ilbuni3 image" class="icon">
+        <span class="btn-label">일분이3</span>
+      </button>
+    </div>
+
+    <script>
+      // const btns = document.querySelectorAll('.menu-btn');
+      // function clickBtnHandler() {
+      //   console.log(this);
+      // }
+      // for (let i=0;i<btns.length; i++) {
+      //   btns[i].addEventListener('click', clickBtnHandler);
+      // }
+      const menu = document.querySelector('.menu');
+
+      // function clickMenuHandler(event) {
+      //   // console.log(event.target.getAttribute('data-value'));
+      //   // console.log(event.target.dataset.value); // data-value, data-가 dataset이 생성됨
+      // }
+
+      function clickHandler(event) {
+        let elem = event.target;
+
+        while(!elem.classList.contains('menu-btn')) {
+          elem = elem.paraentNode;
+
+          if (elem.nodeName == 'body') {
+            elem = null;
+            return;
+          }
+        }
+
+        console.log(elem.dataset.value);
+      }
+      menu.addEventListener('click', clickHandler);
+    </script>
+  </body>
+</html>
