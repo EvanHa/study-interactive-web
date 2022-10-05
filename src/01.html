@@ -26,16 +26,36 @@
       }
     </style>
     <script>
-        window.onload = function(){
-          let h1 = document.getElementsByTagName("h1")[0];
-          let cursor_item = document.getElementsByClassName("cursor_item")[0];
-          window.addEventListener("mousemove", mouseFunc, false);
+      let x = 0;
+      let y = 0;
+      let cursor_item;
+      let mx = 0;
+      let my = 0;
+      let speed = 0.05;
+      let h1;
 
-          function mouseFunc(e){
-            h1.innerHTML = "x: " + e.clientX + " y: " + e.clientY;
-            cursor_item.style.transform = "translate("+e.clientX+"px, "+e.clientY+"px)";
-          }
+      window.onload = function(){
+        h1 = document.getElementsByTagName("h1")[0];
+        cursor_item = document.getElementsByClassName("cursor_item")[0];
+        window.addEventListener("mousemove", mouseFunc, false);
+
+        function mouseFunc(e){
+          x = e.clientX;
+          y = e.clientY;
         }
+        loop();
+      }
+      
+      function loop() {
+        // console.log(x);
+        mx += (x - mx) * speed;
+        my += (y - my) * speed;
+        
+        h1.innerHTML = "x: " + x + " y: " + y;
+        cursor_item.style.transform = "translate("+x+"px, "+y+"px)";
+        window.requestAnimationFrame(loop);
+      }
+
     </script>
 
 </head>
