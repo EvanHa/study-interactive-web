@@ -12,5 +12,5 @@ window.addEventListener('scroll', function(e) {
     let per = Math.round((scrollTop / (document.body.scrollHeight - window.outerHeight)) * 100);
     console.log(per);
 
-    progressBar.style.width = per +"%";
+    progressBar.style.height = per +"%";
 },false)
